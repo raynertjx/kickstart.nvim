@@ -275,6 +275,7 @@ require('lazy').setup({
   -- See `:help gitsigns` to understand what the configuration keys do
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    tag = 'v2.1.0',
     opts = {
       signs = {
         add = { text = '+' },
@@ -722,6 +723,7 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'prettierd', -- Used to format JS/TS/CSS/JSON/HTML/MD/YAML (Prettier daemon)
         'eslint_d', -- Used for ESLint diagnostics + manual fix (--fix)
+        'markdownlint', -- Used to lint Markdown files
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -945,6 +947,7 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+      require('mini.bufremove').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,

@@ -27,7 +27,7 @@ return {
     keys = {
       { '<S-h>', '<cmd>BufferLineCyclePrev<CR>', desc = 'Previous buffer' },
       { '<S-l>', '<cmd>BufferLineCycleNext<CR>', desc = 'Next buffer' },
-      { '<leader>bd', '<cmd>bdelete<CR>', desc = '[B]uffer [D]elete' },
+      { '<leader>bd', function() require('mini.bufremove').delete(0, false) end, desc = '[B]uffer [D]elete' },
       { '<leader>bo', '<cmd>BufferLineCloseOthers<CR>', desc = '[B]uffer close [O]thers' },
       { '<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>', desc = 'Go to buffer 1' },
       { '<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>', desc = 'Go to buffer 2' },
@@ -84,6 +84,22 @@ return {
     priority = 1000,
     config = function()
       require('cyberdream').setup {}
+    end,
+  },
+  { -- rose-pine (installed, not active by default)
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    priority = 1000,
+    config = function()
+      require('rose-pine').setup {}
+    end,
+  },
+  { -- catppuccin (installed, not active by default)
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    config = function()
+      require('catppuccin').setup {}
     end,
   },
 }
