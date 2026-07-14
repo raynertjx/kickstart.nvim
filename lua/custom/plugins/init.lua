@@ -46,6 +46,11 @@ return {
     opts = {
       nes = { enabled = false },
       cli = {
+        win = {
+          keys = {
+            blur_ctrl_w = { '<c-w>', 'blur', mode = 'nt', desc = 'go back to the previous window' },
+          },
+        },
         mux = {
           backend = 'tmux',
           enabled = true,
